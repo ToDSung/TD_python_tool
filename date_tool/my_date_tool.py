@@ -1,6 +1,6 @@
 from datetime import timedelta, datetime
 
-# 注意 end_date 不會被遞迴到
+# 注意 end_date 不會被迭代到
 def iterate_date(start_date, end_date):
     for n in range(int ((end_date - start_date).days)):
         yield start_date + timedelta(n)
@@ -17,6 +17,9 @@ def covert_datetime_to_string(input_datetime, output_format, calc_timezone_hour=
 
 if __name__ == '__main__':
     # 使用範例      
+    # 輸入為 UTC 時間
+    # 轉成本地時間迭代
+    # 輸出為 UTC時間的指定格式
     start_date = covert_string_to_datetime('20190908', '%Y%m%d', 8)
     end_date = covert_string_to_datetime('20190910', '%Y%m%d', 8)
     print(start_date)
